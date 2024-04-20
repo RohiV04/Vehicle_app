@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "vehicle-app",
-    "slug": "vehicle-app",
+    "slug": "vehicleapp",
     "version": "1.0.0",
+    "scheme": "vehicleapp",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,16 +16,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vechile816"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.vechile816",
+      "versionCode": 1,
+      "config":{
+        "googleMaps":{
+          "apiKey": "AIzaSyCX3DEC3Dx8XVlaLc_aahyxhRXKlL8fxD0"
+        },
+        "permissions": ["ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION","FOREGROUND_SERVICE"]
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fa76d180-677b-4cbf-b58b-573e8e44b1ab"
+      }
     }
   }
 }
