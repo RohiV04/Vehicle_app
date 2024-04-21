@@ -10,7 +10,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './App/Pages/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProfileScreen from './App/Pages/ProfileScreen';
-
 import CampusScreen from './App/Pages/CampusScreen';
 
 
