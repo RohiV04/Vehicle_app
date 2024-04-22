@@ -46,7 +46,7 @@ export default function ProfileScreen() {
           <View style={styles.row}>
             <FontAwesome6 name="phone" size={20} color="#777777" />
             <Text style={{ color: "#777777", marginLeft: 20 }}>
-              +91 9999999999
+              +91 9182151467
             </Text>
           </View>
           <View style={styles.row}>
