@@ -19,7 +19,7 @@ export default function CampusScreen() {
           </View>
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Image source={require('../Assets/Image/mess.webp')} style={styles.campusImage}></Image>
-            <Text style={styles.imageLabel}>Akshaya Mess</Text>
+            <Text style={styles.imageLabel}>Jasmine Mess</Text>
           </View>
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Image source={require('../Assets/Image/library.jpeg')} style={{height:200, width:400}}></Image>
