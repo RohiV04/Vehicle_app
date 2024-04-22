@@ -14,7 +14,7 @@ export default function CampusScreen() {
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Image source={require('../Assets/Image/arjuna.webp')} style={styles.campusImage}></Image>
             <TouchableRipple onPress={() => {}}>
-              <Text style={styles.imageLabel}>Arjuna Sports Complex</Text>
+              <Text style={styles.imageLabel}>Qwerty Sports Complex</Text>
             </TouchableRipple>
           </View>
           <View style={{alignItems: 'center', marginTop: 15}}>
