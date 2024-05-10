@@ -91,7 +91,7 @@ useEffect(() => {
           </View>
         </View>
         <View style={styles.view3}>
-          <Text style={styles.whereto}>Where to ?</Text>
+          <Text style={styles.whereto}>how to ?</Text>
           <View style={styles.view4}>
             <FontAwesome6 name="clock-four" size={24} color="black" />
             <Text style={{ marginLeft: 5 }}>Now</Text>
