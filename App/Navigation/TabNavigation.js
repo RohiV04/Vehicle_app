@@ -12,6 +12,7 @@ import HomeScreen from '../Pages/HomeScreen';
 import ProfileScreen from '../Pages/ProfileScreen';
 import CampusScreen from '../Pages/CampusScreen';
 import EditProfileScreen from '../Pages/EditProfileScreen';
+import MapScreen from '../Pages/MapScreen';
 import { Icon } from 'react-native-paper';
 
 const HomeStack = createStackNavigator();
@@ -83,17 +84,17 @@ const HomeStackScreen = ({navigation}) => {
             name="map-location-dot" 
             size={24} 
             color="black"
-            onPress={() => navigation.navigate('EditProfile')} />
+            onPress={() => navigation.navigate('MapScreen')} />
         </View>
       )
      }}
     />
     <HomeStack.Screen 
-     name='EditProfile'
+     name='MapScreen'
      options={{
-      title: 'Edit Profile'
+      title: 'Map Screen'
      }}
-     component={EditProfileScreen}
+     component={MapScreen}
     />
       
     </HomeStack.Navigator>
