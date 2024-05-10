@@ -40,7 +40,7 @@ export default function ProfileScreen() {
           <View style={styles.row}>
             <Entypo name="location" size={20} color="#777777" />
             <Text style={{ color: "#777777", marginLeft: 20 }}>
-              Bhimavaram, India
+              Vijayawada, India
             </Text>
           </View>
           <View style={styles.row}>
