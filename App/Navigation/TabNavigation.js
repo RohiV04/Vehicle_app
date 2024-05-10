@@ -6,7 +6,7 @@ import Colors from '../Utils/Colors';
 
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 import HomeScreen from '../Pages/HomeScreen';
 import ProfileScreen from '../Pages/ProfileScreen';
@@ -78,10 +78,10 @@ const HomeStackScreen = ({navigation}) => {
         </View>
       ),
       headerRight: () => (
-        <View style={{marginRight: 10}}>
-          <MaterialCommunityIcons 
-            name="account-edit" 
-            size={36} 
+        <View style={{marginRight: 18}}>
+          <FontAwesome6 
+            name="map-location-dot" 
+            size={24} 
             color="black"
             onPress={() => navigation.navigate('EditProfile')} />
         </View>
