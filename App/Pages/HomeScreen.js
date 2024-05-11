@@ -15,7 +15,7 @@ import { Entypo } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { mapStyle } from "../Utils/mapStyle";
 import * as Location from "expo-location";
-import { carsAround } from "../Utils/data";
+import { cars } from "../Utils/data";
 import { Marker } from "react-native-maps";
 import { Button, TouchableRipple } from "react-native-paper";
 import { useUser } from "@clerk/clerk-expo";
@@ -84,8 +84,21 @@ useEffect(() => {
               <Text style={styles.text2}>
                 Your Campus Transportation Companion
               </Text>
-              <View style={styles.button1}>
-                <Text style={styles.button1text}>Book A Ride</Text>
+              <View style={styles.editProfile}>
+                <Button
+                  mode="elevated"
+                  onPress={() => {}}
+                  style={{
+                  borderRadius: 10,
+                  borderColor: "#4682B4",
+                  backgroundColor: 'black'
+                  }}
+                  rippleColor={"#f0ffff"}
+                >
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={{ fontSize: 17, color: 'white', justifyContent: 'center', marginBottom: 5 }}>Book A Ride</Text>
+                  </View>
+               </Button>
               </View>
             </View>
           </View>
@@ -144,9 +157,16 @@ useEffect(() => {
             provider={PROVIDER_GOOGLE}
             style={styles.map}
             customMapStyle={mapStyle}
-            showsUserLocation={true}
-            followsUserLocation={true}
-          ></MapView>
+            showsUserLocation = {true}
+            followsUserLocation = {true}
+          >
+            {cars.map((cars,index)=> (
+              <Marker key={index} coordinate={cars} onPress={() => onMarkerSelected(cars)}>
+                <Image source={require('../Assets/Image/carMarker.png')} style={styles.carsAround} resizeMode = "cover" />
+              </Marker>
+            )
+            )}
+          </MapView>
         </View>
       </ScrollView>
       <StatusBar style="light" backgroundColor="#4682B4" translucent={true} />
@@ -172,13 +192,13 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: "white",
-    fontSize: 20,
+    fontSize: 25,
     paddingBottom: 20,
     paddingTop: 20,
   },
   text2: {
     color: "white",
-    fontSize: 16,
+    fontSize: 18,
   },
   view1: {
     flexDirection: "row",
@@ -271,6 +291,13 @@ const styles = StyleSheet.create({
   },
   carsAround: {
     width: 50,
-    height: 50,
+    height: 25
   },
+  editProfile:{
+    height: 40,
+    width: 150,
+    backgroundColor: "black",
+    borderRadius: 20,
+    marginTop: 20,
+  }
 });

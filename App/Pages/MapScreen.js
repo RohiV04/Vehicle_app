@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import MapView, { Marker, PROVIDER_GOOGLE} from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 
-import { markers } from "../Utils/markers";
+import { markers } from "../Utils/Markers";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const INITIAL_REGION = {
