@@ -125,22 +125,22 @@ const CampusStackScreen =({navigation}) => {
           </View>
         ),
         headerRight: () => (
-          <View style={{marginRight: 10}}>
-            <MaterialCommunityIcons 
-              name="account-edit" 
-              size={36} 
+          <View style={{marginRight: 18}}>
+            <FontAwesome6 
+              name="map-location-dot" 
+              size={24} 
               color="black"
-              onPress={() => navigation.navigate('EditProfile')} />
+              onPress={() => navigation.navigate('MapScreen')} />
           </View>
         )
        }}
       />
       <ProfileStack.Screen 
-     name='EditProfile'
+     name='MapScreen'
      options={{
-      title: 'Edit Profile'
+      title: 'Map Screen'
      }}
-     component={EditProfileScreen}
+     component={MapScreen}
     />
 
     </CampusStack.Navigator>
