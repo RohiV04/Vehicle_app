@@ -2,13 +2,19 @@ import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-na
 import React from 'react'
 import BottomSheet from './BottomSheet'
 const RideRequest = () => {
+  const [status, setStatus] = React.useState(false);
 
   return(
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}
+        onPress={() => setStatus(true)}
+      >
         <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}>Book A Ride</Text>
       </TouchableOpacity>
-      <BottomSheet />
+
+      { status && <BottomSheet />}
+
+
     </View>
   )
 }
