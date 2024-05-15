@@ -19,7 +19,11 @@ import { cars } from "../Utils/data";
 import { Marker } from "react-native-maps";
 import { Button, TouchableRipple } from "react-native-paper";
 import { useUser } from "@clerk/clerk-expo";
+import { useNavigation } from "@react-navigation/native";
+
+
 export default function HomeScreen() {
+  const navigation = useNavigation();
   const [latlng, setLatLng] = useState({});
   const { isSignedIn, user } = useUser();
   const checkPermission = async () => {
@@ -87,7 +91,7 @@ useEffect(() => {
               <View style={styles.editProfile}>
                 <Button
                   mode="elevated"
-                  onPress={() => {}}
+                  onPress={() => {navigation.navigate("Riderequest")}}
                   style={{
                   borderRadius: 10,
                   borderColor: "#4682B4",
@@ -96,7 +100,7 @@ useEffect(() => {
                   rippleColor={"#f0ffff"}
                 >
                   <View style={{ flexDirection: "row" }}>
-                    <Text style={{ fontSize: 17, color: 'white', justifyContent: 'center', marginBottom: 5 }}>Book A Ride</Text>
+                    <Text style={{ fontSize: 18, color: 'white', justifyContent: 'center', marginBottom: 5 }}>Book A Ride</Text>
                   </View>
                </Button>
               </View>
