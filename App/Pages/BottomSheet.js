@@ -1,11 +1,35 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Animated } from 'react-native'
 import React from 'react'
 
 const BottomSheet = () => {
 
+    const slide = React.useRef(new Animated.Value(300)).current;
+
+    const slideUp = () => {
+        // Will change fadeAnim value to 1 in 5 seconds
+        Animated.timing(slide, {
+          toValue: 0,
+          duration: 800,
+          useNativeDriver: true,
+        }).start();
+      };
+    
+      const slideDown = () => {
+        // Will change fadeAnim value to 0 in 3 seconds
+        Animated.timing(slide, {
+          toValue: -300,
+          duration: 800,
+          useNativeDriver: true,
+        }).start();
+      };
+
+      React.useEffect(() => {
+        slideUp()
+      }, [])
+
   return(
         <View style={styles.backdrop}>
-            <View style={styles.bottomSheet}>
+            <Animated.View style={[styles.bottomSheet, { transform: [{ translateY: slide}]}]}>
                <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#4682b4' }}>Book A Ride</Text>
                <View style={{marginTop: 20}}>
                 <TextInput 
@@ -20,7 +44,7 @@ const BottomSheet = () => {
                     <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'black' }}>Confirm</Text>
                 </TouchableOpacity>
                </View>
-            </View>
+            </Animated.View>
         </View>
     )
 }
