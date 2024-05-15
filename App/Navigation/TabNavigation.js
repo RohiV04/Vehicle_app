@@ -14,6 +14,7 @@ import CampusScreen from '../Pages/CampusScreen';
 import EditProfileScreen from '../Pages/EditProfileScreen';
 import MapScreen from '../Pages/MapScreen';
 import { Icon } from 'react-native-paper';
+import HomeNavigation from './HomeNavigation';
 
 const HomeStack = createStackNavigator();
 const CampusStack = createStackNavigator();

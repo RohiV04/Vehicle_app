@@ -11,6 +11,8 @@ import HomeScreen from './App/Pages/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProfileScreen from './App/Pages/ProfileScreen';
 import CampusScreen from './App/Pages/CampusScreen';
+import HomeNavigation from './App/Navigation/HomeNavigation';
+
 
 
 export default function App() {
@@ -21,7 +23,7 @@ export default function App() {
       <StatusBar style='auto' />
       <SignedIn>
         <NavigationContainer>
-          <TabNavigation />
+          <HomeNavigation />
         </NavigationContainer>
       </SignedIn>
       <SignedOut>
