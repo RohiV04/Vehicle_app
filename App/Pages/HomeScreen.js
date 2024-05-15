@@ -91,7 +91,7 @@ useEffect(() => {
               <View style={styles.editProfile}>
                 <Button
                   mode="elevated"
-                  onPress={() => {navigation.navigate("Riderequest")}}
+                  onPress={() => {navigation.navigate('RideRequest')}}
                   style={{
                   borderRadius: 10,
                   borderColor: "#4682B4",
