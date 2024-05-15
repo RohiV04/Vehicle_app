@@ -5,6 +5,7 @@ import {
   StatusBar,
   ScrollView,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
@@ -100,21 +101,23 @@ useEffect(() => {
                   rippleColor={"#f0ffff"}
                 >
                   <View style={{ flexDirection: "row" }}>
-                    <Text style={{ fontSize: 18, color: 'white', justifyContent: 'center', marginBottom: 5 }}>Book A Ride</Text>
+                    <Text style={styles.bookaride}>Book A Ride</Text>
                   </View>
                </Button>
               </View>
             </View>
           </View>
         </View>
-        <View style={styles.view3}>
-          <Text style={styles.whereto}>Where to ?</Text>
-          <View style={styles.view4}>
-            <FontAwesome6 name="clock-four" size={24} color="black" />
-            <Text style={{ marginLeft: 5 }}>Now</Text>
-            <Entypo name="chevron-down" size={24} color="black" />
+        <TouchableOpacity onPress={() => {navigation.navigate('RideRequest')}}>
+          <View style={styles.view3}>
+            <Text style={styles.whereto}>Where to ?</Text>
+            <View style={styles.view4}>
+              <FontAwesome6 name="clock-four" size={24} color="black" />
+              <Text style={{ marginLeft: 5 }}>Now</Text>
+              <Entypo name="chevron-down" size={24} color="black" />
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.view5}>
           <View style={styles.view6}>
             <View style={styles.view7}>
@@ -303,5 +306,11 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     borderRadius: 20,
     marginTop: 20,
+  },
+  bookaride: {
+    fontSize: 18,
+    color: "#fffff0",
+    justifyContent: 'center',
+    marginBottom: 5
   }
 });
