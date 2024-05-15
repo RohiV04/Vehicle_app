@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import BottomSheet from './BottomSheet'
-
 const RideRequest = () => {
 
   return(
