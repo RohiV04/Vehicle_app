@@ -118,7 +118,7 @@ useEffect(() => {
             </View>
           </View>
         </TouchableOpacity>
-        <View style={styles.view5}>
+        <TouchableOpacity style={styles.view5} onPress={() => {navigation.navigate('RideRequest')}}>
           <View style={styles.view6}>
             <View style={styles.view7}>
               <MaterialCommunityIcons
@@ -135,9 +135,9 @@ useEffect(() => {
           <View>
             <Entypo name="chevron-right" size={26} color="black" />
           </View>
-        </View>
+        </TouchableOpacity>
 
-        <View style={{ ...styles.view5, borderBottomWidth: 0 }}>
+        <TouchableOpacity style={{ ...styles.view5, borderBottomWidth: 0 }} onPress={() => {navigation.navigate('RideRequest')}}>
           <View style={styles.view6}>
             <View style={styles.view7}>
               <MaterialCommunityIcons
@@ -154,7 +154,7 @@ useEffect(() => {
           <View>
             <Entypo name="chevron-right" size={26} color="black" />
           </View>
-        </View>
+        </TouchableOpacity>
 
         <Text style={styles.text4}>Around You</Text>
 

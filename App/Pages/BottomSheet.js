@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Animated } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Animated, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
+import Autocomplete from 'react-native-dropdown-autocomplete-textinput';
 
 const BottomSheet = () => {
 
@@ -31,16 +32,26 @@ const BottomSheet = () => {
         <View style={styles.backdrop}>
             <Animated.View style={[styles.bottomSheet, { transform: [{ translateY: slide}]}]}>
                <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#4682b4' }}>Book A Ride</Text>
-               <View style={{marginTop: 20}}>
-                <TextInput 
-                  placeholder='PICK UP'
-                  style={styles.input}
-                />
-                <TextInput 
-                  placeholder='DROP-OFF'
-                  style={styles.input}
-                />
-                <TouchableOpacity style={styles.button}>
+               <View style={{marginTop: 25}}>
+                <KeyboardAvoidingView>
+                  <Autocomplete
+                    data={DATA}
+                    displayKey="name"
+                    placeholder={'PICK UP'}
+                    onSelect={value => console.log('value', value)}
+                    maxHeight={300}
+                    textInputStyle={styles.input}
+                  />
+                  <Autocomplete
+                    data={DATA}
+                    displayKey="name"
+                    placeholder={'DROP-OFF'}
+                    onSelect={value => console.log('value', value)}
+                    maxHeight={300}
+                    textInputStyle={styles.input}
+                  />
+                </KeyboardAvoidingView>
+                <TouchableOpacity style={styles.button} onPress={() => {}}>
                     <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'black' }}>Confirm</Text>
                 </TouchableOpacity>
                </View>
@@ -48,6 +59,18 @@ const BottomSheet = () => {
         </View>
     )
 }
+
+const DATA = [
+  {code: 'As', name: 'Ashwatha Hostel'},
+  {code: 'Ar', name: 'Arjuna Sports Complex'},
+  {code: 'Ja', name: 'Jasmine Hostel'},
+  {code: 'Ad', name: 'Admin Block'},
+  {code: 'Fa', name: 'Faculty Quarters'},
+  {code: 'Ac', name: 'Academic Block'},
+  {code: 'Ak', name: 'Akshaya Mess'},
+  {code: 'Ja', name: 'Jasmine Hostel'},
+  {code: 'Ga', name: 'Main Gate'},
+];
 
 export default BottomSheet;
 
@@ -73,12 +96,13 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '100%',
-        height: 45,
+        height: 50,
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "black",
-        paddingHorizontal: 15,
-        marginBottom: 10
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        marginBottom: 10,
     },
     button: {
         paddingHorizontal: 30,
@@ -86,7 +110,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#40A2E3',
         alignItems: 'center',
-        marginTop: 15,
+        marginTop: 20,
         width: '50%',
         marginLeft: 80
       }
