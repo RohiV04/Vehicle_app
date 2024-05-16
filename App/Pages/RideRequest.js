@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity,Image} from 'react-native'
 import React from 'react'
 import BottomSheet from './BottomSheet'
 const RideRequest = () => {
@@ -6,6 +6,10 @@ const RideRequest = () => {
 
   return(
     <View style={styles.container}>
+      <View style={styles.hero}>
+          <Image style={styles.heroImg}
+          source={require('./../Assets/Image/ride1.png')} />
+      </View>
       <TouchableOpacity style={styles.button}
         onPress={() => setStatus(true)}
       >
@@ -32,5 +36,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
     backgroundColor: '#40A2E3'
+  },
+  heroImg: {
+    width: 320,
+    height: 170
+  },
+  hero:{
+    marginBottom: 40
   }
 })
