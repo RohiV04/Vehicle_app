@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity,Image} from 'react-native'
 import React from 'react'
 import BottomSheet from './BottomSheet'
+import axios from 'axios'
+import { useUser } from "@clerk/clerk-expo";
 const RideRequest = () => {
   const [status, setStatus] = React.useState(false);
-
+  const { isSignedIn, user } = useUser();
   return(
     <View style={styles.container}>
       <View style={styles.hero}>
@@ -11,7 +13,7 @@ const RideRequest = () => {
           source={require('./../Assets/Image/ride1.png')} />
       </View>
       <TouchableOpacity style={styles.button}
-        onPress={() => setStatus(true)}
+        onPress={() => axios.put(```https://vehicle.adaptable.app/user/updateRequest/${user.emailAddresses[0].emailAddress}```)}
       >
         <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}>Book A Ride</Text>
       </TouchableOpacity>
