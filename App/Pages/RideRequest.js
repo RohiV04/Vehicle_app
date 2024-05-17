@@ -12,6 +12,7 @@ const RideRequest = () => {
       </View>
       <TouchableOpacity style={styles.button}
         onPress={() => setStatus(true)}
+        
       >
         <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}>Book A Ride</Text>
       </TouchableOpacity>

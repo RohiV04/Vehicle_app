@@ -100,7 +100,7 @@ useEffect(() => {
                   }}
                   rippleColor={"#f0ffff"}
                 >
-                  <View style={{ flexDirection: "row" }}>
+                  <View style={{ flexDirection: "row" }}>  
                     <Text style={styles.bookaride}>Book A Ride</Text>
                   </View>
                </Button>

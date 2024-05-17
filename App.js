@@ -18,7 +18,7 @@ import HomeNavigation from './App/Navigation/HomeNavigation';
 export default function App() {
 
   return (
-    <ClerkProvider publishableKey='pk_test_YW1hemVkLW1hc3RpZmYtNjIuY2xlcmsuYWNjb3VudHMuZGV2JA'>
+    <ClerkProvider publishableKey='pk_test_ZXhvdGljLWN1Yi02NS5jbGVyay5hY2NvdW50cy5kZXYk'>
     <View style={styles.container} >
       <StatusBar style='auto' />
       <SignedIn>
